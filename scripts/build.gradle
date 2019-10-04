@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceSets.main.java.srcDirs = ['./src']
+mainClassName = 'KafkaProtocolBnf'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+  compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.2.0'
+}
+
+run {
+  args = ["./kafka.bnf"]
+}
