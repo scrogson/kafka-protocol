@@ -1,3 +1,4 @@
+// Stolen from https://github.com/klarna/kafka_protocol/blob/master/priv/kafka_protocol_bnf/KafkaProtocolBnf.java
 import org.apache.kafka.common.protocol.types.ArrayOf;
 import org.apache.kafka.common.protocol.types.BoundField;
 import org.apache.kafka.common.protocol.types.Schema;
@@ -11,10 +12,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-//import java.io.BufferedWriter;
-//import java.io.FileWriter;
-//import java.io.IOException;
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class KafkaProtocolBnf {
     private static String indentString(int size) {
@@ -154,11 +154,6 @@ public class KafkaProtocolBnf {
     }
 
     public static void main(String[] args) {
-        //PrintWriter writer = new PrintWriter(System.out);
-        //writer.println(toText());
-        //writer.flush();
-        //writer.close();
-
         String filename = "";
         try {
             filename = args[0];
